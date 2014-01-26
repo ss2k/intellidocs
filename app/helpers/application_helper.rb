@@ -4,6 +4,27 @@ module ApplicationHelper
     filename.split(".").last
   end
 
+  def get_class(ext)
+
+    ms_word = ["doc", "docx"]
+    powerpoint = ["ppt", "pptx"]
+    images = ["jpg", "gif", "png", "bmp"]
+
+    case ext
+    when *powerpoint
+      return "ppt"
+    when *ms_word
+      return "doc"
+    when "pdf"
+      return "pdf"
+    when *images
+      return "images"
+    else
+      return "folder"
+    end
+
+  end
+
   def get_kind(ext)
     ms_word = ["doc", "docx"]
     powerpoint = ["ppt", "pptx"]
