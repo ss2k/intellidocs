@@ -13,6 +13,8 @@ gem 'carrierwave'
 gem 'fog'
 gem 'sunspot_rails'
 gem 'sidekiq'
+gem 'chartkick'
+gem 'groupdate'
 
 group :development do
   gem 'sunspot_solr'

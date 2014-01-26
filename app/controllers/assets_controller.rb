@@ -1,6 +1,8 @@
 class AssetsController < ApplicationController
   def index
+    @searches =  Search.order("created_at desc").pluck(:query).uniq[0..5]
     if params[:q]
+      Search.create!(query: params[:q])
       @search = Asset.search do
         fulltext params[:q]
       end
