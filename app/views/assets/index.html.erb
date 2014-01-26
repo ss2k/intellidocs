@@ -1,6 +1,8 @@
 <h1>Homepage</h1>
 <%= link_to "New Upload", new_asset_path %>
 <br />
+<%= link_to "Dashboard", charts_path %>
+<br />
 <h2>Most Recent Searches</h2>
 <% @searches.each do |s| %>
   <%= link_to s, root_url(q: s) %>
