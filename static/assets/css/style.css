@@ -1,0 +1,155 @@
+ @import url(http://fonts.googleapis.com/css?family=Lato:300,400);
+@import url(http://fonts.googleapis.com/css?family=Leckerli+One);
+
+body {
+	font-family: 'Lato', sans-serif;
+	color: #000;
+	font-size: 14px;
+	font-weight: 300;
+	background-color: #f2f0ed;
+	margin: 0;
+}
+
+p {
+	margin: 0;
+}
+
+/*TOP MENU*/
+/*########*/
+#top-menu {
+	display: block;
+	height: 60px;
+	color: #404041;
+	margin-bottom: 20px;
+}
+
+.left {
+	float: left;
+	display: block;
+	padding-left: 50px;
+	padding-top: 15px;
+}
+
+.right {
+	float: right;
+	padding-top: 15px;
+	padding-right: 50px;
+}
+
+.logo {
+	font-family: "Leckerli One", cursive;
+	font-size: 25px;
+}
+
+.user {
+	font-size: 16px;
+}
+
+.user img {
+	height: 30px;
+	width: auto;
+	border-radius: 15px;
+}
+
+.user-name-holder {
+	line-height: 30px;
+}
+
+.user-name {
+	vertical-align: middle;	
+}
+
+/*SEARCH BAR*/
+/*########*/
+
+
+#search-bar {
+	text-align: center;
+}
+
+#search-bar form {
+	width: 60%;
+	margin-left: auto;
+	margin-right: auto;
+} 
+
+#search-bar form input{
+	margin-top: 10px;
+	margin-bottom: 10px;
+	font-size: 15px;
+	text-indent: 20px;
+	font-weight: 300;
+	width: 100%;
+	height: 44px;
+	border-radius: 22px;
+	border: 0;
+	background-color: #fff;
+}
+
+#search-bar form input:focus{
+	outline: 0px;
+}
+
+/*DROPPABLE ZONE*/
+/*########*/
+#drop-zone {
+	text-align: center;
+	margin: 30px 0;
+}
+
+.droppable-area {
+	width: 70%;
+	margin-left: auto;
+	margin-right: auto;
+	height: 50px;
+	line-height: 50px;
+	border: 2px dashed #ae9c96;
+}
+
+.drop-comment {
+	vertical-align: middle;
+	color: #ae9c96;
+	font-size: 15px;
+	font-weight: 400;
+}
+
+/*FILE LIST*/
+/*########*/
+
+#file-list {
+	margin-top: 40px;
+}
+
+.item-list {
+	width: 70%;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: left;
+	border-spacing: 0;
+	text-indent: 7px;
+	border-collapse:collapse;
+}
+
+.item-list th, .item-list td {
+	height: 40px;
+}
+
+.item-list th {
+	border: 1px solid #ae9c96;
+	margin: 0;
+	padding: 0;
+}
+
+.doc {
+	background-color: #a6d8de;
+}
+
+.ppt {
+	background-color: #FFA096;
+}
+
+.folder {
+	background-color: #f9f1b5;
+}
+
+

@@ -12,6 +12,7 @@ gem 'sunspot_rails'
 gem 'sidekiq'
 gem 'chartkick'
 gem 'groupdate'
+gem "font-awesome-rails"
 
 group :development do
   gem 'sunspot_solr'

@@ -7,6 +7,8 @@ class AssetsController < ApplicationController
         fulltext params[:q]
       end
       @assets = @search.results
+    else
+      @assets = Asset.order("created_at DESC").limit(10)
     end
   end
 
