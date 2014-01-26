@@ -16,7 +16,9 @@ module Uploadocs
     # -- all .rb files in that directory are automatically loaded.
 
     # Custom directories with classes and modules you want to be autoloadable.
-    # config.autoload_paths += %W(#{config.root}/extras)
+    config.autoload_paths += Dir[Rails.root.join('app', 'models', '{**}')]
+    config.autoload_paths += Dir["#{config.root}/lib/**/"]
+    config.autoload_paths += Dir["#{config.root}/app/workers/**"]
 
     # Only load the plugins named here, in the order given (default is alphabetical).
     # :all can be used as a placeholder for all plugins not explicitly named.
@@ -38,6 +40,9 @@ module Uploadocs
 
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]
+
+    config.eager_load = true
+    config.eager_load_paths += Dir["#{config.root}/app/workers/**"]
 
     # Enable escaping HTML in JSON.
     config.active_support.escape_html_entities_in_json = true

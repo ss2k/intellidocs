@@ -12,6 +12,7 @@ gem 'yomu'
 gem 'carrierwave'
 gem 'fog'
 gem 'sunspot_rails'
+gem 'sidekiq'
 
 group :development do
   gem 'sunspot_solr'
