@@ -1,4 +1,33 @@
-<h1>Charts</h1>
+<center><h1>Dashboard</h1></centeR>
 <%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
-<%= pie_chart query_pie_chart_path %>
+
+    <div id="graph-table">
+        <table class="graphs">
+
+            <tr class=''>
+                <td><strong>Search Term Graph</strong><br> These are the most searched terms in your organization.</td>
+                <td><%= pie_chart query_pie_chart_path %></td>
+            </tr>
+            <tr class="">
+                <td>
+                  <table>
+                    <thead>
+                      <tr><td>Term</td></tr>
+                  <% @empty_terms.each do |et| %>
+                    <tr>
+                      <td><%= et %> </td>
+                    </tr>
+                  <% end%>
+                  </table>
+                </td>
+                <td><strong>Search terms with empty results.</strong><br>These are some of the terms that your organization searched for which resulted in an empty result set.</td>
+            </tr>
+            <tr class="">
+                <td><strong>TItle of first graph</strong><br> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</td>
+                <td><img class="graph-figure" src="assets/img/new_york.jpeg"></td>
+            </tr>
+        </table>
+
+    </div>
+
 

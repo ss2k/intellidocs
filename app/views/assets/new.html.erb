@@ -1,6 +1,6 @@
 <h1>Upload a new file</h1>
-<%= simple_form_for @asset do |f| %>
-  <%= f.input :asset, as: :file %>
+<%= simple_form_for [current_user, @asset] do |f| %>
+  <%= f.input :asset, as: :file %>  
   <%= f.input :notes %>
   <%= f.submit %>
 <% end %>

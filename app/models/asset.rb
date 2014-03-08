@@ -1,5 +1,8 @@
 class Asset < ActiveRecord::Base
   attr_accessible :asset, :full_data, :notes
+
+  belongs_to :user
+
   mount_uploader :asset, AssetUploader
 
  after_commit :save_file_details
@@ -8,6 +11,7 @@ class Asset < ActiveRecord::Base
     text :asset, boost: 5
     text :notes, boost: 3
     text :full_data, boost: 2
+    integer :user_id
   end
 
   EXTRACT_FILE_EXTENSIONS = ['pdf', 'docx', 'doc']

@@ -6,7 +6,7 @@ module ApplicationHelper
 
   def get_class(ext)
 
-    ms_word = ["doc", "docx"]
+    ms_word = ["doc", "docx", "txt"]
     powerpoint = ["ppt", "pptx"]
     images = ["jpg", "gif", "png", "bmp"]
 
@@ -39,6 +39,8 @@ module ApplicationHelper
       return "Adobe PDF"
     when *images
       return "Image"
+    when "txt"
+      return "Plain text"
     else
       return "Other"
     end

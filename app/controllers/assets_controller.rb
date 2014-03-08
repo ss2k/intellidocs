@@ -1,8 +1,10 @@
 class AssetsController < ApplicationController
+  before_filter :authenticate_user!
   def index
     @searches =  Search.order("created_at desc").pluck(:query).uniq[0..5]
     if params[:q]
       @search = Asset.search do
+        with(:user_id, current_user.id)
         fulltext params[:q]
       end
       @assets = @search.results
@@ -12,16 +14,16 @@ class AssetsController < ApplicationController
         Search.create!(query: params[:q])
       end
     else
-      @assets = Asset.order("created_at DESC").limit(10)
+      @assets = current_user.assets.order("created_at DESC").limit(10)
     end
   end
 
   def new
-    @asset = Asset.new
+    @asset = current_user.assets.new
   end
 
   def create
-    @asset = Asset.new(params[:asset])
+    @asset = current_user.assets.create(params[:asset])
     if @asset.save
       flash[:notice] = "Asset was successfully saved"
       redirect_to root_url

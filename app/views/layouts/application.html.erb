@@ -11,7 +11,7 @@
     <!-- ########## -->
     <div id="top-menu">
         <div class="left logo">
-            <i class="fa fa-file-text-o"></i><%= link_to "IntelliDocs", root_url %>
+            <i class="fa fa-file-text-o"></i><%= link_to "Intellidocs", root_url %>
         </div>
         <div class="right user">
             <img src="assets/img/avatar.png">
@@ -20,6 +20,11 @@
             </div>
 
         </div>
+        <div class="menu-space">
+            <p class='menu'><%= link_to "Dashboard", charts_path %></p>
+            <p class='menu'><%= link_to "Upload", new_asset_path %></p>
+        </div>
+
     </div>
 
     <!-- SEARCH BAR -->
