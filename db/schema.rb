@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140308003647) do
+ActiveRecord::Schema.define(:version => 20140308083625) do
 
   create_table "assets", :force => true do |t|
     t.string   "asset"
@@ -20,6 +20,15 @@ ActiveRecord::Schema.define(:version => 20140308003647) do
     t.datetime "updated_at", :null => false
     t.text     "notes"
     t.integer  "user_id"
+    t.integer  "folder_id"
+  end
+
+  create_table "folders", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.integer  "user_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "searches", :force => true do |t|

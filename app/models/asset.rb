@@ -11,7 +11,7 @@ class Asset < ActiveRecord::Base
     text :asset, boost: 5
     text :notes, boost: 3
     text :full_data, boost: 2
-    integer :user_id
+    integer (:user_id)
   end
 
   EXTRACT_FILE_EXTENSIONS = ['pdf', 'docx', 'doc']

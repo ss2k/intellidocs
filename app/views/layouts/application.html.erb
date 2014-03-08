@@ -7,6 +7,15 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <% if user_signed_in? %>
+  <li>
+  <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        
+  </li>
+<% else %>
+  <li>
+  <%= link_to('Login', new_user_session_path)  %>  
+  </li>
+<% end %>
     <!-- TOP MENU -->
     <!-- ########## -->
     <div id="top-menu">
@@ -22,7 +31,7 @@
         </div>
         <div class="menu-space">
             <p class='menu'><%= link_to "Dashboard", charts_path %></p>
-            <p class='menu'><%= link_to "Upload", new_asset_path %></p>
+            <p class='menu'><%= link_to "Upload", new_user_asset_path(current_user) %></p>
         </div>
 
     </div>

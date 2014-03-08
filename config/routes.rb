@@ -1,7 +1,10 @@
 Uploadocs::Application.routes.draw do
   devise_for :users, path: 'accounts'
-  resources :users do 
+  resources :users do
     resources :assets
+    resources :folders, only: [:create] do 
+      resources :assets
+    end
   end
 
   resources :assets

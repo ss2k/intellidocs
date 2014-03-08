@@ -1,6 +1,7 @@
 class AssetsController < ApplicationController
   before_filter :authenticate_user!
   def index
+    # @folder = current_user.folders.new
     @searches =  Search.order("created_at desc").pluck(:query).uniq[0..5]
     if params[:q]
       @search = Asset.search do
